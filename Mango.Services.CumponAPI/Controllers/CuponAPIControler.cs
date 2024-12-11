@@ -31,5 +31,21 @@ namespace Mango.Services.CuponAPI.Controllers
             }
             return null;
         }
+
+        [HttpGet]
+        [Route("{id:int}")]
+        public object Get(int id)
+        {
+            try
+            {
+                Cupon objList = _db.Cupons.First(u=>u.CuponId==id);
+                return objList;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return null;
+        }
     }
 }
